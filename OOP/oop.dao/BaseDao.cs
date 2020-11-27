@@ -1,5 +1,4 @@
-﻿using OOP.oop.entity;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +9,24 @@ namespace OOP.oop.dao
 {
     public abstract class BaseDao
     {
+        protected string tableName;
         Database db = Database.getInstants();
-        public abstract bool insert<T>(T row);
-        public abstract int update<T>(T row);
-        public abstract ArrayList findAll(string name);
-        public abstract bool delete<T>(T row);
+
+        public int insert<T>(T row)
+        {
+           return db.insertTable<T>(tableName, row);
+        }
+        public int update<T>(T row)
+        {
+            return db.updateTable<T>(tableName, row);
+        }
+        public bool delete<T>(T row)
+        {
+            return db.deleteTable<T>(tableName, row);
+        }
+        public ArrayList findAll()
+        {
+            return db.selectTable(tableName);
+        }
     }
 }

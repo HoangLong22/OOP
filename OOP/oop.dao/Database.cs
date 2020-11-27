@@ -68,28 +68,55 @@ namespace OOP.oop.dao
 
         public int updateTable<T>(string name, T row)
         {
-            if(name == PRODUCT)
+            if (name == PRODUCT)
             {
                 Product product = (Product)Convert.ChangeType(row, typeof(Product));
-                var i = productTable.IndexOf(product);
-                productTable[i] = row;
+                for (int i = 0; i < productTable.Count; i++)
+                {
+                    Product item = (Product)Convert.ChangeType(productTable[i], typeof(Product));
+                    if (item.Id == product.Id)
+                    {
+                        productTable[i] = product;
+                        return 1;
+                    }
+                }
+                return 0;
             }
+
             if (name == CATEGORY)
             {
                 Category category = (Category)Convert.ChangeType(row, typeof(Category));
-                var i = productTable.IndexOf(category);
-                productTable[i] = row;
+                for (int i = 0; i < categoryTable.Count; i++)
+                {
+                    Category item = (Category)Convert.ChangeType(categoryTable[i], typeof(Category));
+                    if (item.Id == category.Id)
+                    {
+                        productTable[i] = category;
+                        return 1;
+                    }
+                }
+                return 0;
             }
+
             if (name == ACCESSORY)
             {
-                Accessotion accessotion = (Accessotion)Convert.ChangeType(row, typeof(Accessotion));
-                var i = productTable.IndexOf(accessotion);
-                productTable[i] = row;
+                Accessotion accessory = (Accessotion)Convert.ChangeType(row, typeof(Accessotion));
+                for (int i = 0; i < accessoryTable.Count; i++)
+                {
+                    Accessotion item = (Accessotion)Convert.ChangeType(accessoryTable[i], typeof(Accessotion));
+                    if (item.Id == accessory.Id)
+                    {
+                        productTable[i] = accessory;
+                        return 1;
+                    }
+                }
+                return 0;
             }
             return 0;
         }
-        public bool deleteTable<T>(string name, T row)
-        {
+
+            public bool deleteTable<T>(string name, T row)
+            {
             if (name.Equals(PRODUCT))
             {
                 Product product = (Product)Convert.ChangeType(row, typeof(Product));

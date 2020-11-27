@@ -11,18 +11,11 @@ namespace OOP.oop.demo
 {
     class AccessoryDaoDemo
     {
-        public bool insertAccseryTest(Accessotion accessotion)
+        public int insertAccseryTest(Accessotion accessotion)
         {
             AccessoryDao accessoryDao = new AccessoryDao();
             var result = accessoryDao.insert(accessotion);
             return result;
-        }
-        public void printAccseryDao(Accessotion accessotion)
-        {
-            Console.WriteLine("Accessory Dao");
-            Console.WriteLine("id:" + accessotion.Id);
-            Console.WriteLine("name:" + accessotion.Name);
-            Console.WriteLine();
         }
 
         public int updateAccesoryDaoTest(Accessotion accessotion)
@@ -34,7 +27,7 @@ namespace OOP.oop.demo
         public ArrayList findAccessoryDaoTest(string name)
         {
             AccessoryDao accessoryDao = new AccessoryDao();
-            var result = accessoryDao.findAll(name);
+            var result = accessoryDao.findAll();
             return result;
         }
         public bool deleteAccessoryDaoTest(Accessotion accessotion)

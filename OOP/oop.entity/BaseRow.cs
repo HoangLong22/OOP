@@ -8,7 +8,7 @@ namespace OOP.oop.entity
 {
     public abstract class BaseRow
     {
-        public int id;
+        protected int id;
         public int Id
         {
             set { id = value; }
@@ -20,9 +20,22 @@ namespace OOP.oop.entity
             set { name = value; }
             get { return name; }
         }
-        public abstract int getId();
-        public abstract void setId(int id);
-        public abstract string getName();
-        public abstract void setName(string name);
+        public int getId()
+        {
+            return this.id;
+        }
+        public int setId(int id)
+        {
+           return this.id = id;
+        }
+
+        public string getName()
+        {
+            return this.name;
+        }
+        public string setName(string name)
+        {
+            return this.name = name;
+        }
     }
 }

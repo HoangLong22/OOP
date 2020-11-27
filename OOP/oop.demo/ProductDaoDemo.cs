@@ -11,19 +11,11 @@ namespace OOP.oop.demo
 {
     class ProductDaoDemo
     {
-        public bool insertProductTest(Product product)
+        public int insertProductTest(Product product)
         {
             ProductDao productDao = new ProductDao();
             var result = productDao.insert(product);
             return result;
-        }
-        public void printProductDao(Product product)
-        {
-            Console.WriteLine("Product Dao");
-            Console.WriteLine("id:" + product.Id);
-            Console.WriteLine("name:" + product.Name);
-            Console.WriteLine("categoryid:" + product.CategoryId);
-            Console.WriteLine();
         }
 
         public int updateProductDaoTest(Product product)
@@ -35,7 +27,7 @@ namespace OOP.oop.demo
         public ArrayList findProductDaoTest(string name)
         {
             ProductDao productDao = new ProductDao();
-            var result = productDao.findAll(name);
+            var result = productDao.findAll();
             return result;
         }
 

@@ -9,9 +9,9 @@ namespace OOP.oop.dao
 {
     interface IDao
     {
-        bool insert<T>(T row);
+        int insert<T>(T row);
         int update<T>(T row);
-        ArrayList findAll(string name);
+        ArrayList findAll();
         bool delete<T>(T row);
     }
 }

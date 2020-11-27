@@ -11,18 +11,11 @@ namespace OOP.oop.demo
 {
     class CategoryDaoDemo
     {
-        public bool insertCategoryTest(Category category)
+        public int insertCategoryTest(Category category)
         {
             CategoryDao categoryDao = new CategoryDao();
             var result = categoryDao.insert(category);
             return result;
-        }
-        public void printCategoryDao(Category category)
-        {
-            Console.WriteLine("Category Dao");
-            Console.WriteLine("id:" + category.Id);
-            Console.WriteLine("name:" + category.Name);
-            Console.WriteLine();
         }
 
         public int updateCategoryDaoTest(Category category)
@@ -35,7 +28,7 @@ namespace OOP.oop.demo
         public ArrayList findCategoryDaoTest(string name)
         {
             CategoryDao categoryDao = new CategoryDao();
-            var result = categoryDao.findAll(name);
+            var result = categoryDao.findAll();
             return result;
         }
         public bool deleteCategoryDaoTest(Category category)

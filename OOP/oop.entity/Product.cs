@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP.oop.entity
 {
-    class Product : BaseRow, IEntity
+    class Product : BaseRow
     {
         private int categoryId;
         public int CategoryId
@@ -20,27 +20,9 @@ namespace OOP.oop.entity
             this.name = name;
             this.categoryId = categoryid;
         }
-        public override int getId()
-        {
-            return id;
-        }
-        public override void setId(int id)
-        {
-            this.id = id;
-        }
-
-        public override string getName()
-        {
-            return name;
-        }
-        public override void setName(string name)
-        {
-            this.name = name;
-        }
-
         public int getCategoryId()
         {
-            return categoryId;
+            return this.categoryId;
         }
         public void setCategoryId(int id)
         {
